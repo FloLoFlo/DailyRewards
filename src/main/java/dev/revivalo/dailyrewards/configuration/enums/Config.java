@@ -9,7 +9,7 @@ import dev.revivalo.dailyrewards.DailyRewardsPlugin;
 import dev.revivalo.dailyrewards.configuration.YamlFile;
 import dev.revivalo.dailyrewards.hooks.Hooks;
 import dev.revivalo.dailyrewards.utils.TextUtils;
-import io.th0rgal.oraxen.api.OraxenItems;
+//import io.th0rgal.oraxen.api.OraxenItems;
 import lombok.RequiredArgsConstructor;
 import org.bukkit.Material;
 import org.bukkit.configuration.ConfigurationSection;
@@ -134,8 +134,8 @@ public enum Config {
                             items.put(key, itemStack);
                         } else if (Hooks.getITEMS_ADDER_HOOK().isOn() && ItemsAdder.isCustomItem(itemName)) {
                             items.put(key, CustomStack.getInstance(itemName).getItemStack());
-                        } else if (Hooks.getORAXEN_HOOK().isOn() && OraxenItems.exists(itemName)) {
-                            items.put(key, OraxenItems.getItemById(itemName).build());
+                //        } else if (Hooks.getORAXEN_HOOK().isOn() && OraxenItems.exists(itemName)) {
+                //            items.put(key, OraxenItems.getItemById(itemName).build());
                         } else {
                             items.put(key, XMaterial.matchXMaterial(itemName.toUpperCase(Locale.ENGLISH)).orElse(XMaterial.STONE).parseItem());
                         }
